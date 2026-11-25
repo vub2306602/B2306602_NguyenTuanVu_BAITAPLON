@@ -1,0 +1,93 @@
+/*
+ * ============================================================
+ * ADMIN.CSS — Frontend Quản Trị Viên (Admin)
+ * Tone màu chủ đạo: Xanh lục Emerald (#198754) + Trắng
+ * ============================================================
+ */
+
+:root {
+  --admin-primary: #198754;
+  --admin-primary-dark: #0f5132;
+  --admin-primary-light: #20c997;
+  --admin-bg-light: #f0fdf4;
+  --admin-surface: #ffffff;
+  --admin-border: #d1e7dd;
+  --admin-text-main: #1e293b;
+  --admin-text-muted: #64748b;
+  --admin-sidebar-width: 260px;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f8fafc;
+  color: var(--admin-text-main);
+  overflow-x: hidden;
+}
+
+/* Nút Primary Xanh lục Emerald */
+.btn-primary {
+  background-color: var(--admin-primary) !important;
+  border-color: var(--admin-primary) !important;
+  color: #fff !important;
+}
+
+.btn-primary:hover, .btn-primary:focus {
+  background-color: var(--admin-primary-dark) !important;
+  border-color: var(--admin-primary-dark) !important;
+}
+
+/* Form focus */
+.form-control:focus, .form-select:focus {
+  border-color: var(--admin-primary) !important;
+  box-shadow: 0 0 0 0.25rem rgba(25, 135, 84, 0.25) !important;
+}
+
+/* Sidebar Responsive */
+.admin-sidebar {
+  width: var(--admin-sidebar-width);
+  height: 100vh;
+  max-height: 100vh;
+  position: sticky;
+  top: 0;
+  background-color: var(--admin-primary-dark);
+  color: #fff;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+  z-index: 1040;
+  overflow: hidden;
+}
+
+.admin-sidebar .nav-link {
+  color: rgba(255, 255, 255, 0.85);
+  padding: 0.75rem 1.25rem;
+  border-radius: 6px;
+  margin: 0.2rem 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  transition: background-color 0.2s ease;
+}
+
+.admin-sidebar .nav-link:hover, .admin-sidebar .nav-link.active {
+  background-color: var(--admin-primary);
+  color: #fff;
+}
+
+/* Mobile & Tablet Styles */
+@media (max-width: 991.98px) {
+  .admin-sidebar {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: -260px;
+  }
+  .admin-sidebar.show {
+    left: 0;
+  }
+  .sidebar-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1030;
+  }
+}
